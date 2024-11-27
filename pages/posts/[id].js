@@ -1,7 +1,6 @@
 import { getGlobalData } from '../../utils/global-data';
-import {
-  getPostBySlug,
-} from '../../utils/mdx-utils';
+import { getPostBySlug } from '../../utils/mdx-utils';
+import { getPost } from '../../utils/mdx-utils';
 
 import { MDXRemote } from 'next-mdx-remote';
 import Head from 'next/head';
@@ -44,6 +43,17 @@ export default function PostPage({
             {posts.body}
           </article>
         </main>
+        {/* Adicionando a seção "Mais Informações" */}
+        <section className="mt-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+          <h2 className="text-2xl font-bold mb-4">Mais Informações</h2>
+          <p>
+            Para explorar mais posts interessantes, visite a{' '}
+            <Link href="/">
+              <a className="text-blue-600 hover:underline">página inicial</a>
+            </Link>
+            . Você encontrará conteúdos variados e atualizações frequentes.
+          </p>
+        </section>
       </article>
       <Footer copyrightText={globalData.footerText} />
       <GradientBackground
